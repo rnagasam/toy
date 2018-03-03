@@ -48,4 +48,70 @@ Here is the set of operations the language supports
 
 (rotate-relative (box 1 1 1) (vec 0 0 1 90)) ; rotate the box (relative)
 (|## (box 1 1 1) (vec 0 0 1 90))             ; alternate syntax for rotate-relative
+
+(scale (box 1 1 1) 5) ; create (box 5 5 5)
+(^^ (box 1 1 1) 5)    ; alternate syntax for scale
 ```
+
+## sample programs
+
+```
+(box 1 1 1)
+```
+
+![unitbox](https://github.com/bluerama/cadtoy/blob/master/img/unitbox.png)
+
+```
+(cyl 1 1)
+```
+
+![unitcyl](https://github.com/bluerama/cadtoy/blob/master/img/unitcyl.png)
+
+```
+(define (l-bracket size thickness)
+  (- (scale unitbox size)
+     (box (- size thickness)
+          (- size thickness)
+	  size)))
+
+(l-bracket 100 15)
+```
+
+![l-bracket](https://github.com/bluerama/cadtoy/blob/master/img/l-bracket.png)
+
+
+```
+(define (plate-with-hole size thickness radius)
+  (- (box size size thickness)
+     (move (cyl radius thickness)
+           (vec (/ size 2) (/ size 2) 0))))
+```
+
+![plate-with-hold](https://github.com/bluerama/cadtoy/blob/master/img/pwh.png)
+
+
+There is support for recursive functions
+
+```
+(define (recurse num)
+  (if (> num 1)
+      (+ unitbox (|> unitbox (! x x x))
+         (recursive (- number 1)))
+      unitbox))
+```
+
+![recurse](https://github.com/bluerama/cadtoy/blob/master/img/recurse.png)
+
+
+Sometimes, we get shapes like this...
+
+![weird](https://github.com/bluerama/cadtoy/blob/master/img/weird2.png)
+
+
+## running
+
+It is quite a pain to run all of this at this point in time. FreeCAD is used to render
+the CAD parts, but the language itself doesn't depend on it. Parts are created using
+the `create` function in `interpreter.py`. One would have to start a FreeCAD session
+and import `interpreter` and `lparser` and then write programs in FreeCAD's python
+console.
