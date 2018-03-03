@@ -108,11 +108,10 @@ Sometimes, we get shapes like this...
 ![weird](https://github.com/bluerama/cadtoy/blob/master/img/weird2.png)
 
 
-## is it useful?
+
+## is this language useful?
 
 No.
-
-However, this has been a fun thing to work on. 
 
 ## running
 
