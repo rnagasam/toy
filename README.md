@@ -100,7 +100,7 @@ There is support for recursive functions
       unitbox))
 ```
 
-![recurse](https://github.com/bluerama/cadtoy/blob/master/img/recurse.png)
+![recurse](https://github.com/bluerama/cadtoy/blob/master/img/recurse1.png)
 
 
 Sometimes, we get shapes like this...
