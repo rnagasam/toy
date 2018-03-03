@@ -108,6 +108,12 @@ Sometimes, we get shapes like this...
 ![weird](https://github.com/bluerama/cadtoy/blob/master/img/weird2.png)
 
 
+## is it useful?
+
+No.
+
+However, this has been a fun thing to work on. 
+
 ## running
 
 It is quite a pain to run all of this at this point in time. FreeCAD is used to render
@@ -115,3 +121,4 @@ the CAD parts, but the language itself doesn't depend on it. Parts are created u
 the `create` function in `interpreter.py`. One would have to start a FreeCAD session
 and import `interpreter` and `lparser` and then write programs in FreeCAD's python
 console.
+
