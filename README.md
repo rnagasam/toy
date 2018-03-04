@@ -95,7 +95,7 @@ There is support for recursive functions
 ```
 (define (recurse num)
   (if (> num 1)
-      (+ unitbox (|> unitbox (! x x x))
+      (+ unitbox (|> unitbox (! num num num))
          (recurse (- number 1)))
       unitbox))
 ```
