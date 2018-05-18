@@ -1,4 +1,4 @@
-# cadtoy
+# toy
 
 ## intro
 
